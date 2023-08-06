@@ -37,6 +37,11 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+        binding?.fragmentWebView?.loadUrl("http://10.0.2.2:3000")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
