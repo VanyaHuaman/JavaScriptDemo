@@ -27,7 +27,7 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
         binding?.fragmentWebView?.settings?.javaScriptEnabled = true
         binding?.fragmentWebView?.addJavascriptInterface(
             WebAppInterface(requireContext()),
-            "Android"
+            ANDROID
         )
 
         binding?.loadButton?.setOnClickListener {
@@ -39,11 +39,15 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
 
     override fun onStart() {
         super.onStart()
-        binding?.fragmentWebView?.loadUrl("http://10.0.2.2:3000")
+        binding?.fragmentWebView?.loadUrl("http://10.0.2.2:3000/custom")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    companion object {
+        private const val ANDROID = "Android"
     }
 }
