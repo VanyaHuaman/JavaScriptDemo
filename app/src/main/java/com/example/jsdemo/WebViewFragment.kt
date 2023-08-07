@@ -39,7 +39,14 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
 
     override fun onStart() {
         super.onStart()
-        binding?.fragmentWebView?.loadUrl("http://10.0.2.2:3000/custom")
+        /**
+         * If you are using the https://github.com/VanyaHuaman/CalendarDemoJS
+         * then change the load url value to http://10.0.2.2:3000/custom
+         * OR
+         * you can just type in the url into the UI and hit the load button
+         */
+
+        binding?.fragmentWebView?.loadUrl("http://google.com")
     }
 
     override fun onDestroyView() {
